@@ -708,7 +708,7 @@ body {
   box-sizing: border-box;
 }
 .row.g-4.portfolio-container {
-  height: auto;
+  height: auto !important;
 }
 .portfolio-item {
   position: static !important;
