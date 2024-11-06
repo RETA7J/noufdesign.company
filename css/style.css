@@ -713,3 +713,42 @@ body {
 .portfolio-item {
   position: static !important;
 }
+
+.containertextcode {
+    text-align: center; /* محاذاة النص في الوسط */
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold; /* جعل النص عريض */
+    color: #333;
+}
+
+.imagesmycode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center; /* لمحاذاة الصور في المنتصف */
+  gap: 10px; /* مسافة بين الصور */
+}
+
+.imagesmycode img {
+  width: 30%; /* تصغير العرض ليكون ربع الشاشة */
+  max-width: 200px; /* الحد الأقصى للعرض */
+  height: auto;
+  border-radius: 8px; /* انحناء بسيط للزوايا */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  transition: transform 0.3s; /* تأثير عند تمرير المؤشر */
+}
+
+.groupimgs{
+  margin-bottom: 150px;
+}
+.amthla{
+  margin-bottom: 50px;
+}
+.wide-img {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 8px;
+}
