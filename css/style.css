@@ -752,3 +752,64 @@ body {
   height: auto;
   border-radius: 8px;
 }
+
+/* تنسيق الحاوية */
+.containeralwan {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* تنسيق الأقسام */
+.sectionalwan {
+  margin-bottom: 40px;
+}
+
+/* تنسيق العناوين */
+.sectionalwan h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* تنسيق الفقرات */
+.sectionalwan p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* تنسيق القوائم */
+.sectionalwan ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sectionalwan ul li {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* تنسيق الصور */
+.sectionalwan img {
+  width: 65%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+/* تنسيق شبكة الصور */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* أربع صور بجانب بعضها */
+  gap: 10px; /* المسافة بين الصور */
+  margin-top: 15px;
+}
+
+.color-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
