@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://noufdesigncompany.vercel.app/sitemap.xml
+Sitemap: https://noufdesigncompany.vercel.app/index.html
