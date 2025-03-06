@@ -81,7 +81,27 @@
 <div class="container-fluid p-0 pb-5">
 <div class="owl-carousel header-carousel position-relative">
 <div class="owl-carousel-item position-relative">
-<img class="img-fluid" src="noufwebsite-photos/123.avif" alt="">
+
+    <!-- الصورة الجديدة فقط -->
+<picture>
+  <source 
+    srcset="noufwebsite-photos/123.avif" 
+    type="image/avif"
+  >
+  <source 
+    srcset="noufwebsite-photos/123.webp" 
+    type="image/webp"
+  >
+  <img 
+    class="custom-responsive-img" <!-- فئة مخصصة للصورة فقط -->
+    src="noufwebsite-photos/123.jpg" 
+    alt="تصميم داخلي - نوف العتيبي"
+    loading="lazy"
+    width="1920"
+    height="1080"
+  >
+</picture>
+<!-- <img class="img-fluid" src="noufwebsite-photos/123.avif" alt=""> -->
 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
 <div class="container">
 <div class="row justify-content-center">
