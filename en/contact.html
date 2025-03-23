@@ -166,7 +166,55 @@
     <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value,
+        };
+
+        try {
+          const response = await fetch(
+            "https://nouf-server.vercel.app/contact",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+
+          if (response.ok) {
+            Swal.fire({
+              title: "عمل رائع!",
+              text: "تم ارسال الرسالة بنجاح!",
+              icon: "success",
+              confirmButtonText: "موافق",
+            });
+            form.reset();
+          } else {
+            Swal.fire({
+              text: "حدث خطأ ما!",
+              confirmButtonText: "موافق",
+              icon: "error",
+            });
+          }
+        } catch (error) {
+          Swal.fire({
+            text: "حدث خطأ ما!",
+            confirmButtonText: "موافق",
+            icon: "error",
+          });
+        }
+      });
+    </script>
 </body>
 
 </html>
