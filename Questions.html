@@ -231,17 +231,7 @@
 
 
     <!-- Service Start -->
-       <div class="chat-container">
-        <div class="stats">
-            <span>🔄 <span id="total-questions">0</span> سؤال متاح</span>
-            <span>💡 <span id="popular-question">-</span></span>
-        </div>
-
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="ابحث عن سؤال..." onkeyup="filterQuestions()">
-            <span>🔍</span>
-        </div>
-
+        <div class="chat-container">
         <div id="chat-messages">
             <div class="message bot-message">
                 <div class="bubble bot-bubble">مرحبًا! اختر فئة الأسئلة أولاً ▼</div>
@@ -265,8 +255,6 @@
     </div>
 
     <script>
-        
-        
         const faqData = {
             general: [
                 {
@@ -368,8 +356,6 @@
             ]
         };
 
-
-        // ---- النظام الأساسي ----
         function loadQuestions() {
             const category = document.getElementById('category-select').value;
             const questionSelect = document.getElementById('question-select');
@@ -406,10 +392,8 @@
             document.getElementById('question-select').value = '';
             document.getElementById('category-select').value = '';
             document.getElementById('question-select').disabled = true;
-            saveChatHistory();
         }
 
-        // ---- التحسينات ----
         function filterQuestions() {
             const searchTerm = document.getElementById('search-input').value.toLowerCase();
             const categories = document.getElementById('category-select').options;
@@ -444,10 +428,6 @@
             document.getElementById('total-questions').textContent = total;
         }
 
-        function saveChatHistory() {
-            localStorage.setItem('chatHistory', document.getElementById('chat-messages').innerHTML);
-        }
-
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.className = 'notification';
@@ -456,10 +436,12 @@
             setTimeout(() => notification.remove(), 3000);
         }
 
-        // التحميل الأولي
         window.onload = () => {
-            const savedChat = localStorage.getItem('chatHistory');
-            if (savedChat) document.getElementById('chat-messages').innerHTML = savedChat;
+            document.getElementById('chat-messages').innerHTML = `
+                <div class="message bot-message">
+                    <div class="bubble bot-bubble">مرحبًا! اختر فئة الأسئلة أولاً ▼</div>
+                </div>
+            `;
             updateStats();
         }
 
@@ -470,7 +452,7 @@
             
             const bubble = document.createElement('div');
             bubble.className = `bubble ${isUser ? 'user-bubble' : 'bot-bubble'}`;
-            bubble.innerHTML = message.replace(/\n/g, '<br>');
+            bubble.textContent = message;
             
             messageDiv.appendChild(bubble);
             chat.appendChild(messageDiv);
