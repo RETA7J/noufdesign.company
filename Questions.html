@@ -89,7 +89,36 @@
 
 
     <!-- Service Start -->
-   
+   <div class="faq-item">
+    <div class="question">ما هي طرق الدفع المتاحة؟</div>
+    <div class="answer">نقبل الدفع بواسطة البطاقات الائتمانية (Visa, MasterCard) وحسابات PayPal.</div>
+</div>
+
+<style>
+.question {
+    padding: 12px;
+    background: #f5f5f5;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.answer {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+.question:hover { background: #eee; }
+</style>
+
+<script>
+document.querySelectorAll('.question').forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
     <!-- Service End -->
 
         
